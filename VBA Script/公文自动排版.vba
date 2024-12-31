@@ -1,65 +1,65 @@
 '====================================================================
-'                            Ê¹ÓÃËµÃ÷:
-'ÖÆ×÷ VBA ÎÄ¼şÊ±, ÇëÖ»±£ÁôÒ»¸öSub ÓÃÓÚÖ´ĞĞ,  ÆäËû¹ı³ÌÇëÓÃ Function ¹Ø¼ü×Ö¡£
-'Sub ¹ı³ÌÃûÍÆ¼öÓÃ ÓÃ»§ID_ÖĞÎÄÃû³Æ µÄ·½Ê½ÃüÃû,±ÜÃâ´úÂë³åÍ»¡£
-'VBA ÎÄ¼şÇëÊ¹ÓÃANSI(¼òÌåÖĞÎÄGB2312)±àÂë±£´æ, Î¢ÈíµÄVBA½âÊÍÆ÷²»Ö§³ÖUTF-8ÕâÀà±àÂë,»áµ¼ÖÂÖĞÎÄÂÒÂë¡£
-'²»ÕıÈ·µÄ´úÂë¿ÉÄÜµ¼ÖÂword±ÀÀ£¡¢ÎÄµµ¶ªÊ§»òËğ»µ¡£
-'ÇëÎñ±Ø±£Ö¤vba´úÂëÀ´Ô´°²È«¿É¿¿£¬²å¼ş×÷Õß²»³Ğµ£vbaÎÄ¼şÔì³ÉµÄÈÎºÎËğÊ§£¡
-'·ÖÏí VBA ÎÄ¼şÊ±£¬Çë×ğÖØ×÷Õß°æÈ¨£¬×¢Ã÷À´Ô´ÒÔÊ¾¸ĞĞ»¡£
+'                            ä½¿ç”¨è¯´æ˜:
+'åˆ¶ä½œ VBA æ–‡ä»¶æ—¶, è¯·åªä¿ç•™ä¸€ä¸ªSub ç”¨äºæ‰§è¡Œ,  å…¶ä»–è¿‡ç¨‹è¯·ç”¨ Function å…³é”®å­—ã€‚
+'Sub è¿‡ç¨‹åæ¨èç”¨ ç”¨æˆ·ID_ä¸­æ–‡åç§° çš„æ–¹å¼å‘½å,é¿å…ä»£ç å†²çªã€‚
+'VBA æ–‡ä»¶è¯·ä½¿ç”¨ANSI(ç®€ä½“ä¸­æ–‡GB2312)ç¼–ç ä¿å­˜, å¾®è½¯çš„VBAè§£é‡Šå™¨ä¸æ”¯æŒUTF-8è¿™ç±»ç¼–ç ,ä¼šå¯¼è‡´ä¸­æ–‡ä¹±ç ã€‚
+'ä¸æ­£ç¡®çš„ä»£ç å¯èƒ½å¯¼è‡´wordå´©æºƒã€æ–‡æ¡£ä¸¢å¤±æˆ–æŸåã€‚
+'è¯·åŠ¡å¿…ä¿è¯vbaä»£ç æ¥æºå®‰å…¨å¯é ï¼Œæ’ä»¶ä½œè€…ä¸æ‰¿æ‹…vbaæ–‡ä»¶é€ æˆçš„ä»»ä½•æŸå¤±ï¼
+'åˆ†äº« VBA æ–‡ä»¶æ—¶ï¼Œè¯·å°Šé‡ä½œè€…ç‰ˆæƒï¼Œæ³¨æ˜æ¥æºä»¥ç¤ºæ„Ÿè°¢ã€‚
 '====================================================================
 
-'  Ô­×÷Õß: 413191246se
-'  Ô´ÂëµØÖ·: https://club.excelhome.net/thread-1649038-1-1.html
-'  ĞŞ¸ÄÈË: Ğ¡¿ÖÁú
-'  ĞŞ¸Ä¸üĞÂÈÕÆÚ: 2023Äê3ÔÂ13ÈÕ
+'  åŸä½œè€…: 413191246se
+'  æºç åœ°å€: https://club.excelhome.net/thread-1649038-1-1.html
+'  ä¿®æ”¹äºº: å°æé¾™
+'  ä¿®æ”¹æ›´æ–°æ—¥æœŸ: 2023å¹´3æœˆ13æ—¥
 
  '------------------------------------------------------------------------
- 'ÎÄµµ¾¡Á¿²»Òª¹ıÓÚ¸´ÔÓ, ÓÈÆä²»ÍÆ¼öÍ¼ÎÄÅÅ°æÊ¹ÓÃ±¾½Å±¾
+ 'æ–‡æ¡£å°½é‡ä¸è¦è¿‡äºå¤æ‚, å°¤å…¶ä¸æ¨èå›¾æ–‡æ’ç‰ˆä½¿ç”¨æœ¬è„šæœ¬
  '------------------------------------------------------------------------
  
 
-Option Explicit    'Ç¿ÖÆÉùÃ÷±äÁ¿ÊÇ¸öºÃÏ°¹ß, ¿ÉÒÔÌá¸ß´úÂëËÙ¶È,¼õÉÙbug
+Option Explicit    'å¼ºåˆ¶å£°æ˜å˜é‡æ˜¯ä¸ªå¥½ä¹ æƒ¯, å¯ä»¥æé«˜ä»£ç é€Ÿåº¦,å‡å°‘bug
 
-Sub xkonglong_×Ô¶¯ÅÅ°æ()
-'¹«ÎÄ
-    Initial   '³õÊ¼»¯,.
-    GWStyle  '¹«ÎÄ·ç¸ñ
-    Title1  '±êÌâ
-    Inscribe 'Âä¿î
-    PageNumGW   '¹«ÎÄÒ³Âë
-    Common '¹«¹²²¿·Öµ÷Õû
-    'xbs '±êÌâÉèÎª·½ÕıĞ¡±êËÎ,ÓĞĞèÇóÉ¾µô±¾ĞĞÇ°µÄµ¥ÒıºÅ
+Sub xkonglong_è‡ªåŠ¨æ’ç‰ˆ()
+'å…¬æ–‡
+    Initial   'åˆå§‹åŒ–,.
+    GWStyle  'å…¬æ–‡é£æ ¼
+    Title1  'æ ‡é¢˜
+    Inscribe 'è½æ¬¾
+    PageNumGW   'å…¬æ–‡é¡µç 
+    Common 'å…¬å…±éƒ¨åˆ†è°ƒæ•´
+    'xbs 'æ ‡é¢˜è®¾ä¸ºæ–¹æ­£å°æ ‡å®‹,æœ‰éœ€æ±‚åˆ æ‰æœ¬è¡Œå‰çš„å•å¼•å·
 End Sub
 
 Function Initial()
-'³õÊ¼»¯
+'åˆå§‹åŒ–
     Dim t As Table
 
-    'Ò³ÃæÉèÖÃ/Ä¬ÈÏA4
+    'é¡µé¢è®¾ç½®/é»˜è®¤A4
     PaperSetup
 
-    'Ò³¿í/±ÜÃâË¢ĞÂ
+    'é¡µå®½/é¿å…åˆ·æ–°
     ActiveWindow.ActivePane.View.Zoom.PageFit = wdPageFitBestFit
 
     With ActiveDocument
-        'Í¨ÓÃÄ£°åÄÚÖÃÑùÊ½¸´ÖÆµ½»î¶¯ÎÄµµ
+        'é€šç”¨æ¨¡æ¿å†…ç½®æ ·å¼å¤åˆ¶åˆ°æ´»åŠ¨æ–‡æ¡£
         .CopyStylesFromTemplate Template:=.AttachedTemplate.FullName
 
-        'É¾³ıÓò
+        'åˆ é™¤åŸŸ
         .Fields.Unlink
 
-        'ÁĞ±í±àºÅ×ªÎÄ±¾
+        'åˆ—è¡¨ç¼–å·è½¬æ–‡æœ¬
         .ConvertNumbersToText
 
-        'ÊÖ¶¯»»ĞĞ·û->¶ÎÂä±ê¼Ç
+        'æ‰‹åŠ¨æ¢è¡Œç¬¦->æ®µè½æ ‡è®°
         With .Content.Find
             .Execute "^l", , , 0, , , , , , "^p", 2
-            .Execute "([¡¢.£®£©])([ ¡¡^s^t]{1,})", , , 1, , , , , , "\1", 2
-            .Execute "(^13¸½)([!Ò»-şO])", , , 1, , , , , , "\1¼ş\2", 2
-            .Execute "¸½±í", , , , , , , , , "¸½¼ş", 2
+            .Execute "([ã€.ï¼ï¼‰])([ ã€€^s^t]{1,})", , , 1, , , , , , "\1", 2
+            .Execute "(^13é™„)([!ä¸€-ï¨©])", , , 1, , , , , , "\1ä»¶\2", 2
+            .Execute "é™„è¡¨", , , , , , , , , "é™„ä»¶", 2
         End With
 
-        'È¡Ïû»·ÈÆ/¾ÓÖĞ
+        'å–æ¶ˆç¯ç»•/å±…ä¸­
         For Each t In .Tables
             With t.Range.Rows
                 .WrapAroundText = False
@@ -70,16 +70,16 @@ Function Initial()
 End Function
 
 Function PaperSetup()
-' Ò³ÃæÉèÖÃ, ´Ë´¦Äã¿ÉÒÔĞŞ¸Ä±ß¾à
+' é¡µé¢è®¾ç½®, æ­¤å¤„ä½ å¯ä»¥ä¿®æ”¹è¾¹è·
     Dim Sec As Section
     For Each Sec In ActiveDocument.Sections
         With Sec.PageSetup
             If .Orientation = wdOrientPortrait Then
-                .TopMargin = CentimetersToPoints(2.54)  'ÉÏ±ß¾à
+                .TopMargin = CentimetersToPoints(2.54)  'ä¸Šè¾¹è·
                 .BottomMargin = CentimetersToPoints(2.54)
                 .LeftMargin = CentimetersToPoints(3.17)
                 .RightMargin = CentimetersToPoints(3.17)
-                .PageWidth = CentimetersToPoints(21)   'Ò³Ãæ¿í¶È
+                .PageWidth = CentimetersToPoints(21)   'é¡µé¢å®½åº¦
                 .PageHeight = CentimetersToPoints(29.7)
             Else
                 .TopMargin = CentimetersToPoints(2.5)
@@ -96,7 +96,7 @@ Function PaperSetup()
 End Function
 
 Function GWStyle()
-'¹«ÎÄÑùÊ½
+'å…¬æ–‡æ ·å¼
     Dim doc As Document, i As Paragraph, r(), n As Long, t2&, t3&, t4&, t5&
 
     Set doc = ActiveDocument
@@ -123,15 +123,15 @@ Function GWStyle()
         With r(n)
             .Select
 
-            'É¾³ı¶ÎÂäÊ×Î²¿Õ¸ñ
+            'åˆ é™¤æ®µè½é¦–å°¾ç©ºæ ¼
             CommandBars.FindControl(ID:=122).Execute
 
-            'Çå³ı¸ñÊ½
+            'æ¸…é™¤æ ¼å¼
             Selection.ClearFormatting
 
-            'ÕıÎÄÑùÊ½
+            'æ­£æ–‡æ ·å¼
             With .Font
-                .Name = "·ÂËÎ"
+                .Name = "ä»¿å®‹"
                 .Size = 16
                 .Color = wdColorBlue
                 .Kerning = 0
@@ -147,16 +147,16 @@ Function GWStyle()
             If .Start <> 0 Then .InsertParagraphBefore
 
             With .Find
-                .Execute "(^13)([Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÅÊ®°ÙÁã©–¡ğOo0£°£Ï£ï]@)(¡¢)", , , 1, , , , , , "\1Ò»\3", 2
-                .Execute "(^13)([(£¨][Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÅÊ®°ÙÁã©–¡ğOo0£°£Ï£ï]@[£©)])", , , 1, , , , , , "\1£¨Ò»£©", 2
-                .Execute "(^13)([0-9£°-£¹]@[¡¢.£®])", , , 1, , , , , , "\11£®", 2
-                .Execute "(^13)[(£¨][0-9£°-£¹]@[£©)]", , , 1, , , , , , "\1£¨1£©", 2
+                .Execute "(^13)([ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹åç™¾é›¶ã€‡â—‹Oo0ï¼ï¼¯ï½]@)(ã€)", , , 1, , , , , , "\1ä¸€\3", 2
+                .Execute "(^13)([(ï¼ˆ][ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹åç™¾é›¶ã€‡â—‹Oo0ï¼ï¼¯ï½]@[ï¼‰)])", , , 1, , , , , , "\1ï¼ˆä¸€ï¼‰", 2
+                .Execute "(^13)([0-9ï¼-ï¼™]@[ã€.ï¼])", , , 1, , , , , , "\11ï¼", 2
+                .Execute "(^13)[(ï¼ˆ][0-9ï¼-ï¼™]@[ï¼‰)]", , , 1, , , , , , "\1ï¼ˆ1ï¼‰", 2
             End With
 
-            'Title2345Style/Format/AutoNum    ±êÌâ¸ñÊ½/×Ô¶¯±àºÅ
+            'Title2345Style/Format/AutoNum    æ ‡é¢˜æ ¼å¼/è‡ªåŠ¨ç¼–å·
             For Each i In .Paragraphs
                 With i.Range
-                    If .Text Like "Ò»¡¢*" Then
+                    If .Text Like "ä¸€ã€*" Then
                         .Style = wdStyleHeading2
                         .Font.Color = wdColorRed
 
@@ -164,33 +164,33 @@ Function GWStyle()
                         t3 = 0
                         t4 = 0
                         t5 = 0
-                        doc.Range(Start:=.Start, End:=.Characters(InStr(.Text, "¡¢")).Start).Select
+                        doc.Range(Start:=.Start, End:=.Characters(InStr(.Text, "ã€")).Start).Select
                         
-                        'Ğ¡¿ÖÁúĞŞ¸Ä,Ô´ÂëÓĞÎó
+                        'å°æé¾™ä¿®æ”¹,æºç æœ‰è¯¯
                         Selection.Fields.Add Range:=Selection.Range, Text:="= " & t2 & " \* CHINESENUM3"
 
                         
 
-                    ElseIf .Text Like "£¨Ò»£©*" Then
+                    ElseIf .Text Like "ï¼ˆä¸€ï¼‰*" Then
                         .Style = wdStyleHeading3
                         .Font.Color = wdColorPink
-                        .Font.NameFarEast = "¿¬Ìå"
+                        .Font.NameFarEast = "æ¥·ä½“"
 
                         t3 = t3 + 1
                         t4 = 0
                         t5 = 0
-                        doc.Range(Start:=.Start + 1, End:=.Characters(InStr(.Text, "£©")).Start).Select
+                        doc.Range(Start:=.Start + 1, End:=.Characters(InStr(.Text, "ï¼‰")).Start).Select
                         
-                        'Ğ¡¿ÖÁúĞŞ¸Ä,Ô´ÂëÓĞÎó
+                        'å°æé¾™ä¿®æ”¹,æºç æœ‰è¯¯
                         
                         Selection.Fields.Add Range:=Selection.Range, Text:="= " & t3 & " \* CHINESENUM3"
                         
 
-                    ElseIf .Text Like "#£®*" Then
+                    ElseIf .Text Like "#ï¼*" Then
                         .Style = wdStyleHeading4
                         .Font.Color = wdColorGreen
                         With .Font
-                            .Name = "·ÂËÎ"
+                            .Name = "ä»¿å®‹"
                             .Size = 16
                         End With
                         With .ParagraphFormat
@@ -200,13 +200,13 @@ Function GWStyle()
 
                         t4 = t4 + 1
                         t5 = 0
-                        doc.Range(Start:=.Start, End:=.Characters(InStr(.Text, "£®")).Start).Text = t4
+                        doc.Range(Start:=.Start, End:=.Characters(InStr(.Text, "ï¼")).Start).Text = t4
 
-                    ElseIf .Text Like "£¨#£©*" Then
+                    ElseIf .Text Like "ï¼ˆ#ï¼‰*" Then
                         .Style = wdStyleHeading5
                         .Font.Color = wdColorOrange
                         With .Font
-                            .Name = "·ÂËÎ"
+                            .Name = "ä»¿å®‹"
                             .Size = 16
                         End With
                         With .ParagraphFormat
@@ -215,19 +215,19 @@ Function GWStyle()
                         End With
 
                         t5 = t5 + 1
-                        doc.Range(Start:=.Characters(1).End, End:=.Characters(InStr(.Text, "£©")).Start).Text = t5
+                        doc.Range(Start:=.Characters(1).End, End:=.Characters(InStr(.Text, "ï¼‰")).Start).Text = t5
 
                     ElseIf Asc(.Text) = 13 Then
                         .Delete
 
-                    ElseIf .Text Like "[!^13]¸½¼ş*" Or .Text Like "¸½¼ş*" Then
+                    ElseIf .Text Like "[!^13]é™„ä»¶*" Or .Text Like "é™„ä»¶*" Then
                         t2 = 0
                         t3 = 0
                         t4 = 0
                         t5 = 0
                     End If
 
-                    If .Style Like "±êÌâ*" Then
+                    If .Style Like "æ ‡é¢˜*" Then
                         .Font.Kerning = 0
                         With .ParagraphFormat
                             .LineSpacing = LinesToPoints(1.5)
@@ -238,31 +238,31 @@ Function GWStyle()
                             .KeepTogether = False
                         End With
 
-                        If .Sentences(1) Like "*£º??*" Then
-                            .MoveStart 1, InStr(.Text, "£º")
+                        If .Sentences(1) Like "*ï¼š??*" Then
+                            .MoveStart 1, InStr(.Text, "ï¼š")
                             With .Font
-                                .Name = "·ÂËÎ"
+                                .Name = "ä»¿å®‹"
                                 .Bold = False
                                 .Color = wdColorBlue
                             End With
 
-                            If .Paragraphs(1).Range.Style Like "±êÌâ*" & "[23]" Then
-                                If .Text Like "*[¡££º£»£¬¡¢£¡£¿¡­¡ª.:;,!?]?" Then
+                            If .Paragraphs(1).Range.Style Like "æ ‡é¢˜*" & "[23]" Then
+                                If .Text Like "*[ã€‚ï¼šï¼›ï¼Œã€ï¼ï¼Ÿâ€¦â€”.:;,!?]?" Then
                                     .Characters.Last.Previous.Delete
                                 End If
-                            ElseIf .Paragraphs(1).Range.Style Like "±êÌâ*" & "[45]" Then
-                                If .Text Like "*[!¡££º£»£¬¡¢£¡£¿¡­¡ª.:;,!?]?" Then
+                            ElseIf .Paragraphs(1).Range.Style Like "æ ‡é¢˜*" & "[45]" Then
+                                If .Text Like "*[!ã€‚ï¼šï¼›ï¼Œã€ï¼ï¼Ÿâ€¦â€”.:;,!?]?" Then
                                     If .Text Like "*[!0-9a-zA-Z]?" Then
-                                        .Characters.Last.InsertBefore Text:="¡£"
+                                        .Characters.Last.InsertBefore Text:="ã€‚"
                                     End If
                                 End If
                             End If
                         Else
                             If .Sentences.Count = 1 Then
-                                If .Text Like "*[¡££º£»£¬¡¢£¡£¿¡­¡ª.:;,!?]?" Then .Characters.Last.Previous.Delete
+                                If .Text Like "*[ã€‚ï¼šï¼›ï¼Œã€ï¼ï¼Ÿâ€¦â€”.:;,!?]?" Then .Characters.Last.Previous.Delete
                             Else
                                 With doc.Range(Start:=.Sentences(1).End, End:=.End).Font
-                                    .Name = "·ÂËÎ"
+                                    .Name = "ä»¿å®‹"
                                     .Bold = False
                                     .Color = wdColorBlue
                                 End With
@@ -290,17 +290,17 @@ End Function
 
 
 Function Title1()
-'Ò»¼¶±êÌâ
+'ä¸€çº§æ ‡é¢˜
     Dim doc As Document, i As Paragraph
 
     Set doc = ActiveDocument
 
     With doc.Paragraphs(1).Range
         If .End <> doc.Content.End Then
-            If Not (.Next(4, 1) Like "*[¡££º£»£¬¡¢£¡£¿¡­¡ª.:;,!?]?" Or .Next(4, 1) Like "[Ò»1][¡¢.£®]*" Or .Next(4, 1) Like "£¨[Ò»1]£©*" Or .Next(4, 1) Like "µÚ[Ò»1]*" Or .Next.Information(12)) Then .MoveEnd 4
+            If Not (.Next(4, 1) Like "*[ã€‚ï¼šï¼›ï¼Œã€ï¼ï¼Ÿâ€¦â€”.:;,!?]?" Or .Next(4, 1) Like "[ä¸€1][ã€.ï¼]*" Or .Next(4, 1) Like "ï¼ˆ[ä¸€1]ï¼‰*" Or .Next(4, 1) Like "ç¬¬[ä¸€1]*" Or .Next.Information(12)) Then .MoveEnd 4
         End If
         If .End <> doc.Content.End Then
-            If Not (.Next(4, 1) Like "*[¡££º£»£¬¡¢£¡£¿¡­¡ª.:;,!?]?" Or .Next(4, 1) Like "[Ò»1][¡¢.£®]*" Or .Next(4, 1) Like "£¨[Ò»1]£©*" Or .Next(4, 1) Like "µÚ[Ò»1]*" Or .Next.Information(12)) Then .MoveEnd 4
+            If Not (.Next(4, 1) Like "*[ã€‚ï¼šï¼›ï¼Œã€ï¼ï¼Ÿâ€¦â€”.:;,!?]?" Or .Next(4, 1) Like "[ä¸€1][ã€.ï¼]*" Or .Next(4, 1) Like "ï¼ˆ[ä¸€1]ï¼‰*" Or .Next(4, 1) Like "ç¬¬[ä¸€1]*" Or .Next.Information(12)) Then .MoveEnd 4
         End If
         If .End <> doc.Content.End Then
             .Characters.Last.InsertParagraphBefore
@@ -324,16 +324,16 @@ Function Title1()
             .Last.Font.Size = 26
         End With
 
-        '³Æºô
+        'ç§°å‘¼
         If .End <> doc.Content.End Then
             With .Next(4, 1)
                 If Not .Information(12) Then
-                    If .Text Like "*[£º:]?" Then
+                    If .Text Like "*[ï¼š:]?" Then
                         If .ComputeStatistics(1) < 3 Then
-                            .Characters.Last.Previous.Text = "£º"
+                            .Characters.Last.Previous.Text = "ï¼š"
                             With .Find
-                                .Execute "(", , , 0, , , , , , "£¨", 2
-                                .Execute ")", , , 0, , , , , , "£©", 2
+                                .Execute "(", , , 0, , , , , , "ï¼ˆ", 2
+                                .Execute ")", , , 0, , , , , , "ï¼‰", 2
                             End With
                             .Font.Color = wdColorViolet
                             With .ParagraphFormat
@@ -346,18 +346,18 @@ Function Title1()
             End With
         End If
 
-        '¿Õ¸ñ
+        'ç©ºæ ¼
         With .Find
-            .Execute "(", , , 0, , , , , , "£¨", 2
-            .Execute ")", , , 0, , , , , , "£©", 2
-            .Execute "[ ¡¡^s^t]", , , 1, , , , , , "", 2
+            .Execute "(", , , 0, , , , , , "ï¼ˆ", 2
+            .Execute ")", , , 0, , , , , , "ï¼‰", 2
+            .Execute "[ ã€€^s^t]", , , 1, , , , , , "", 2
         End With
 
-        '£¨²İ¸å£©
+        'ï¼ˆè‰ç¨¿ï¼‰
         With .Paragraphs.Last.Previous.Range
-            If .Text Like "£¨*£©?" Then
+            If .Text Like "ï¼ˆ*ï¼‰?" Then
                 With .Font
-                    .NameFarEast = "¿¬Ìå"
+                    .NameFarEast = "æ¥·ä½“"
                     .Size = 18
                     .Color = wdColorTeal
                 End With
@@ -371,12 +371,12 @@ Function Title1()
                 .Next.ParagraphFormat.Space1
             End If
 
-            '¼Ó¿Õ
-            If Not .Text Like "*£©*" Then
+            'åŠ ç©º
+            If Not .Text Like "*ï¼‰*" Then
                 If .Text Like "???" Then
                     .Characters(1).InsertAfter Text:="    "
                 ElseIf .Text Like "????" Then
-                    If .Text Like "Ğ­ÒéÊé?" Then .Font.Size = 26
+                    If .Text Like "åè®®ä¹¦?" Then .Font.Size = 26
                     .Characters(1).InsertAfter Text:="   "
                     .Characters(5).InsertAfter Text:="   "
                 ElseIf .Text Like "?????" Then
@@ -400,12 +400,12 @@ Function Title1()
 
         For Each i In .Paragraphs
             With i.Range
-                If .Text Like "[!£¨]*[£©¡±¡µ¡·]?" Then .InsertBefore Text:=" "
-                If .Text Like "[¡°£¨¡¶¡´]*[!£©]?" Then .ParagraphFormat.CharacterUnitLeftIndent = -0.5
+                If .Text Like "[!ï¼ˆ]*[ï¼‰â€ã€‰ã€‹]?" Then .InsertBefore Text:=" "
+                If .Text Like "[â€œï¼ˆã€Šã€ˆ]*[!ï¼‰]?" Then .ParagraphFormat.CharacterUnitLeftIndent = -0.5
             End With
         Next
 
-        '±í¸ñ
+        'è¡¨æ ¼
         If .Next.Information(12) Then
             .Characters.First.Delete
             .Characters.Last.Delete
@@ -415,7 +415,7 @@ Function Title1()
 End Function
 
 Function Inscribe()
-'Âä¿î
+'è½æ¬¾
     Dim doc As Document, r As Range, arr, TextSize&, Base!, lenUnit&, k&
 
     Set doc = ActiveDocument
@@ -430,12 +430,12 @@ Function Inscribe()
         Do While .Execute
             With .Parent
                 .MoveStart
-                .Characters(5).Text = "Äê"
-                .Characters.Last.InsertBefore Text:="ÈÕ"
+                .Characters(5).Text = "å¹´"
+                .Characters.Last.InsertBefore Text:="æ—¥"
                 If .Characters(7) Like "[0-9]" Then
-                    .Characters(8).Text = "ÔÂ"
+                    .Characters(8).Text = "æœˆ"
                 Else
-                    .Characters(7).Text = "ÔÂ"
+                    .Characters(7).Text = "æœˆ"
                 End If
                 .Start = .End
             End With
@@ -445,14 +445,14 @@ Function Inscribe()
     Set r = doc.Content
     With r.Find
         .ClearFormatting
-        .Text = "^13[0-9]{4}Äê[0-9]{1,2}ÔÂ[0-9]{1,2}ÈÕ[^13^12]"
+        .Text = "^13[0-9]{4}å¹´[0-9]{1,2}æœˆ[0-9]{1,2}æ—¥[^13^12]"
         .Forward = True
         .MatchWildcards = True
         Do While .Execute
             With .Parent
                 .MoveStart
-                If .Text Like "*0?ÔÂ*" Then .Characters(6).Delete
-                If .Text Like "*0?ÈÕ*" Then .Characters.Last.Previous.Previous.Previous.Delete
+                If .Text Like "*0?æœˆ*" Then .Characters(6).Delete
+                If .Text Like "*0?æ—¥*" Then .Characters.Last.Previous.Previous.Previous.Delete
                 If Not .Font.Size = 22 Then k = 1: Exit Do
                 .Start = .End
             End With
@@ -471,17 +471,17 @@ Function Inscribe()
         End With
 
         If TextSize = 16 Then
-            If .Text Like "*Äê?ÔÂ?ÈÕ?" Then
+            If .Text Like "*å¹´?æœˆ?æ—¥?" Then
                 Base = 18.22
-            ElseIf .Text Like "*Äê?ÔÂ??ÈÕ?" Or .Text Like "*Äê??ÔÂ?ÈÕ?" Then
+            ElseIf .Text Like "*å¹´?æœˆ??æ—¥?" Or .Text Like "*å¹´??æœˆ?æ—¥?" Then
                 Base = 17.97
             Else
                 Base = 17.72
             End If
         Else
-            If .Text Like "*Äê?ÔÂ?ÈÕ?" Then
+            If .Text Like "*å¹´?æœˆ?æ—¥?" Then
                 Base = 20.7
-            ElseIf .Text Like "*Äê?ÔÂ??ÈÕ?" Or .Text Like "*Äê??ÔÂ?ÈÕ?" Then
+            ElseIf .Text Like "*å¹´?æœˆ??æ—¥?" Or .Text Like "*å¹´??æœˆ?æ—¥?" Then
                 Base = 20.45
             Else
                 Base = 20.2
@@ -490,7 +490,7 @@ Function Inscribe()
 
         'unit
         With .Previous(4, 1)
-            If .Text Like "*[!¡££º£»£¬¡¢£¡£¿¡­¡ª.:;,!?]?" Then
+            If .Text Like "*[!ã€‚ï¼šï¼›ï¼Œã€ï¼ï¼Ÿâ€¦â€”.:;,!?]?" Then
                 .Font.Color = wdColorRed
                 .InsertBefore Text:=vbCr & vbCr & vbCr
                 .SetRange Start:=.Paragraphs.Last.Range.Start, End:=.Paragraphs.Last.Range.End
@@ -549,15 +549,15 @@ Function Inscribe()
         End With
     End With
 
-    If doc.Content Like "*" & vbCr & "¸½*" = False Then Exit Function
-'¸½¼ş
+    If doc.Content Like "*" & vbCr & "é™„*" = False Then Exit Function
+'é™„ä»¶
     Dim DateRange As Range, myRange As Range, i As Paragraph, j&, n&, oBefore&, oAfter&, oTitle$
-'Ç°¸½¼ş
+'å‰é™„ä»¶
     Set DateRange = r
     Set r = doc.Range(Start:=0, End:=DateRange.End)
     With r.Find
         .ClearFormatting
-        .Text = "^13¸½¼ş*^13"
+        .Text = "^13é™„ä»¶*^13"
         .Forward = True
         .MatchWildcards = True
         .Execute
@@ -575,12 +575,12 @@ Function Inscribe()
             End With
         End If
     End With
-'ºó¸½¼ş
+'åé™„ä»¶
 sc:
     Set r = doc.Range(Start:=DateRange.End - 1, End:=doc.Content.End)
     With r.Find
         .ClearFormatting
-        .Text = "[^13^12]¸½¼ş*^13"
+        .Text = "[^13^12]é™„ä»¶*^13"
         .Forward = True
         .MatchWildcards = True
         Do While .Execute
@@ -593,7 +593,7 @@ sc:
                 .MoveStart 1, 2
 
                 'special
-                Do While .Next(4, 1) Like "#£®*" & vbCr Or .Next(4, 1) Like "##£®*" & vbCr
+                Do While .Next(4, 1) Like "#ï¼*" & vbCr Or .Next(4, 1) Like "##ï¼*" & vbCr
                     .MoveEnd 4
                     If .End = doc.Content.End Then
                         oTitle = .Text
@@ -607,10 +607,10 @@ sc:
 
                 .MoveEnd 1, -1
                 n = n + 1
-                .Text = "¸½¼ş" & n & "£º"
+                .Text = "é™„ä»¶" & n & "ï¼š"
 
                 With .Font
-                    .NameFarEast = "ºÚÌå"
+                    .NameFarEast = "é»‘ä½“"
                     .NameAscii = "Times New Roman"
                     .Bold = True
                     .Color = wdColorRed
@@ -624,13 +624,13 @@ sc:
                 With .Next(4, 1)
                     If Not .Information(12) Then
                         If Not (.Next.Information(12)) Then
-                            If Not (.Next(4, 1) Like "*[¡££º:_]*" Or .Next(4, 1) Like "[Ò»1][¡¢.£®]*" Or .Next(4, 1) Like "£¨[Ò»1]£©*" Or .Next(4, 1) Like "µÚÒ»*") Then
+                            If Not (.Next(4, 1) Like "*[ã€‚ï¼š:_]*" Or .Next(4, 1) Like "[ä¸€1][ã€.ï¼]*" Or .Next(4, 1) Like "ï¼ˆ[ä¸€1]ï¼‰*" Or .Next(4, 1) Like "ç¬¬ä¸€*") Then
                                 .MoveEnd 4
                                 .Paragraphs(1).Range.Characters.Last.Delete
                             End If
                         End If
                         If Not (.Next.Information(12)) Then
-                            If Not (.Next(4, 1) Like "*[¡££º:_]*" Or .Next(4, 1) Like "[Ò»1][¡¢.£®]*" Or .Next(4, 1) Like "£¨[Ò»1]£©*" Or .Next(4, 1) Like "µÚÒ»*") Then
+                            If Not (.Next(4, 1) Like "*[ã€‚ï¼š:_]*" Or .Next(4, 1) Like "[ä¸€1][ã€.ï¼]*" Or .Next(4, 1) Like "ï¼ˆ[ä¸€1]ï¼‰*" Or .Next(4, 1) Like "ç¬¬ä¸€*") Then
                                 .MoveEnd 4
                                 .Paragraphs(1).Range.Characters.Last.Delete
                             End If
@@ -643,11 +643,11 @@ sc:
                         .Expand 4
                     End If
 
-                    .Find.Execute "[ ¡¡^s^t]", , , 1, , , , , , "", 2
+                    .Find.Execute "[ ã€€^s^t]", , , 1, , , , , , "", 2
 
                     oTitle = oTitle & .Text
                     With .Font
-                        .NameFarEast = "ËÎÌå"
+                        .NameFarEast = "å®‹ä½“"
                         .NameAscii = "Times New Roman"
                         .Size = 20
                         .Bold = True
@@ -664,8 +664,8 @@ sc:
                         .ParagraphFormat.LineSpacing = LinesToPoints(1.25)
                     End If
                     .Paragraphs.Last.Range.ParagraphFormat.Space15
-                    If .Text Like "*[£©¡±¡µ¡·]?" Then .InsertBefore Text:=" "
-                    If .Text Like "[¡°£¨¡¶¡´]*[!£©]?" Then .ParagraphFormat.CharacterUnitLeftIndent = -0.5
+                    If .Text Like "*[ï¼‰â€ã€‰ã€‹]?" Then .InsertBefore Text:=" "
+                    If .Text Like "[â€œï¼ˆã€Šã€ˆ]*[!ï¼‰]?" Then .ParagraphFormat.CharacterUnitLeftIndent = -0.5
                 End With
                 oAfter = 1
                 .Start = .End
@@ -677,14 +677,14 @@ sc:
     With r
         If oAfter = 0 And Len(.Text) > 1 Then
             If .Text Like vbCr & Chr(12) & "*" Then
-                .Characters(2).InsertAfter Text:="¸½¼ş£º" & vbCr
+                .Characters(2).InsertAfter Text:="é™„ä»¶ï¼š" & vbCr
             ElseIf .Text Like vbCr & "*" Then
-                .Characters(1).InsertAfter Text:="¸½¼ş£º" & vbCr
+                .Characters(1).InsertAfter Text:="é™„ä»¶ï¼š" & vbCr
             ElseIf .Characters(2).Information(12) Then
                 .Characters(2).Select
                 With Selection
                     .SplitTable
-                    .TypeText Text:="¸½¼ş£º"
+                    .TypeText Text:="é™„ä»¶ï¼š"
                     With .Paragraphs(1).Range
                         .Font.Size = 16
                         With .ParagraphFormat
@@ -700,17 +700,17 @@ sc:
         If n = 1 Then .Previous.Previous.Delete
     End With
     If oBefore = 0 And oAfter = 0 Then Exit Function
-'ÌÖÂÛ
+'è®¨è®º
     If oBefore = 1 Then
         If oAfter = 1 Then
             With myRange
-                If .Text Like "¸½¼ş[£º:]" & vbCr & "*" Then .Paragraphs(1).Range.Delete
+                If .Text Like "é™„ä»¶[ï¼š:]" & vbCr & "*" Then .Paragraphs(1).Range.Delete
                 If .Paragraphs.Count = n Then
                     .Text = oTitle
                 Else
-                    If MsgBox("<Ç°¸½¼ş> " & .Paragraphs.Count & " ¸ö£º" & vbCr & .Text & vbCr _
-                        & "<ºó¸½¼ş> " & n & " ¸ö£º" & vbCr & oTitle & vbCr & "* Âä¿îÇ°ºó¸½¼ş¸öÊı²»Ò»ÖÂ£¡ÇëÑ¡Ôñ£º" & vbCr _
-                        & "[ÊÇ(Y)] ÒÔ<Ç°¸½¼ş>Îª×¼£¡     [·ñ(N)] ÒÔ<ºó¸½¼ş>Îª×¼£¡", 4 + 16) = vbNo Then .Text = oTitle
+                    If MsgBox("<å‰é™„ä»¶> " & .Paragraphs.Count & " ä¸ªï¼š" & vbCr & .Text & vbCr _
+                        & "<åé™„ä»¶> " & n & " ä¸ªï¼š" & vbCr & oTitle & vbCr & "* è½æ¬¾å‰åé™„ä»¶ä¸ªæ•°ä¸ä¸€è‡´ï¼è¯·é€‰æ‹©ï¼š" & vbCr _
+                        & "[æ˜¯(Y)] ä»¥<å‰é™„ä»¶>ä¸ºå‡†ï¼     [å¦(N)] ä»¥<åé™„ä»¶>ä¸ºå‡†ï¼", 4 + 16) = vbNo Then .Text = oTitle
                 End If
             End With
         End If
@@ -726,7 +726,7 @@ sk:
             Set myRange = DateRange
         End If
     End If
-'Ëõ½ø
+'ç¼©è¿›
     With myRange
         With .Font
             .Color = wdColorBrown
@@ -739,19 +739,19 @@ sk:
 
         For Each i In .Paragraphs
             With i.Range
-                If .Text Like "¸½*" Then .Characters(1).Delete
-                If .Text Like "¼ş*" Then .Characters(1).Delete
-                If .Text Like "±í*" Then .Characters(1).Delete
-                If .Text Like "[Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÅÊ®]*" Then .Characters(1).Delete
-                If .Text Like "#[£º:.£®¡¢£¬]*" Or .Text Like "##[£º:.£®¡¢£¬]*" Then .Characters(1).Delete
-                If .Text Like "#[£º:.£®¡¢£¬]*" Or .Text Like "##[£º:.£®¡¢£¬]*" Then .Characters(1).Delete
-                If .Text Like "[£º:.£®¡¢£¬]*" Then .Characters(1).Delete
-                If .Text Like "¡¶*" Then .Characters(1).Delete
-                If .Text Like "*¡·?" Then .Characters.Last.Previous.Delete
+                If .Text Like "é™„*" Then .Characters(1).Delete
+                If .Text Like "ä»¶*" Then .Characters(1).Delete
+                If .Text Like "è¡¨*" Then .Characters(1).Delete
+                If .Text Like "[ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹å]*" Then .Characters(1).Delete
+                If .Text Like "#[ï¼š:.ï¼ã€ï¼Œ]*" Or .Text Like "##[ï¼š:.ï¼ã€ï¼Œ]*" Then .Characters(1).Delete
+                If .Text Like "#[ï¼š:.ï¼ã€ï¼Œ]*" Or .Text Like "##[ï¼š:.ï¼ã€ï¼Œ]*" Then .Characters(1).Delete
+                If .Text Like "[ï¼š:.ï¼ã€ï¼Œ]*" Then .Characters(1).Delete
+                If .Text Like "ã€Š*" Then .Characters(1).Delete
+                If .Text Like "*ã€‹?" Then .Characters.Last.Previous.Delete
 
-                If .Text Like "#[£º:.£®¡¢£¬]*" Or .Text Like "##[£º:.£®¡¢£¬]*" Then .Characters(1).Delete
-                If .Text Like "#[£º:.£®¡¢£¬]*" Or .Text Like "##[£º:.£®¡¢£¬]*" Then .Characters(1).Delete
-                If .Text Like "[£º:.£®¡¢£¬]*" Then .Characters(1).Delete
+                If .Text Like "#[ï¼š:.ï¼ã€ï¼Œ]*" Or .Text Like "##[ï¼š:.ï¼ã€ï¼Œ]*" Then .Characters(1).Delete
+                If .Text Like "#[ï¼š:.ï¼ã€ï¼Œ]*" Or .Text Like "##[ï¼š:.ï¼ã€ï¼Œ]*" Then .Characters(1).Delete
+                If .Text Like "[ï¼š:.ï¼ã€ï¼Œ]*" Then .Characters(1).Delete
             End With
         Next
 
@@ -762,7 +762,7 @@ sk:
         Else
             For Each i In .Paragraphs
                 j = j + 1
-                i.Range.InsertBefore Text:=j & "£®" & vbTab
+                i.Range.InsertBefore Text:=j & "ï¼" & vbTab
             Next
         End If
 
@@ -771,7 +771,7 @@ sk:
             .CharacterUnitFirstLineIndent = -1.56
         End With
 
-        .InsertBefore Text:="¸½¼ş£º"
+        .InsertBefore Text:="é™„ä»¶ï¼š"
 
         With .Paragraphs(1).Range.ParagraphFormat
             .CharacterUnitLeftIndent = 3.05
@@ -783,22 +783,22 @@ sk:
 End Function
 
 Function PageNumGW()
-'¹«ÎÄÒ³Âë, ÎªÁË¼æÈİwps,Ğ¡¿ÖÁúĞŞ¸ÄÁË¸Ã¶ÎÊµÏÖÔ­Àí.
+'å…¬æ–‡é¡µç , ä¸ºäº†å…¼å®¹wps,å°æé¾™ä¿®æ”¹äº†è¯¥æ®µå®ç°åŸç†.
     Dim Rng As Range
     With ActiveDocument.Sections(1)
         With .Footers(wdHeaderFooterPrimary)
             .Range.Delete
             If .Parent.Parent.ComputeStatistics(wdStatisticPages) > 2 Then
                 Set Rng = .Range
-                Rng.Text = "¡ª "
+                Rng.Text = "â€” "
                 Rng.Collapse wdCollapseEnd
                 ActiveDocument.Fields.Add Rng, wdFieldPage, "Page"
                 .Range.Fields.Update
                 Set Rng = .Range
                 Rng.Collapse wdCollapseEnd
-                Rng.Text = " ¡ª"
+                Rng.Text = " â€”"
                 .Range.ParagraphFormat.Alignment = wdAlignParagraphCenter
-                .Range.Font.Name = "ËÎÌå"
+                .Range.Font.Name = "å®‹ä½“"
                 .Range.Font.Size = 14
             End If
         End With
@@ -807,15 +807,15 @@ Function PageNumGW()
 End Function
 
 Function Common()
-    NumPages  'Ò³Êı
-    StyleReset   '¹«ÎÄÑùÊ½
+    NumPages  'é¡µæ•°
+    StyleReset   'å…¬æ–‡æ ·å¼
     Selection.HomeKey Unit:=wdStory
-    AutoColor  '×ÖÌå»Ö¸´ÎªÄ¬ÈÏÑÕÉ«
-'    Xbs      '±êÌâÉèÎª·½ÕıĞ¡±êËÎ¼òÌå,Èç¹ûÃ»ÓĞ¸Ã×ÖÌå, ºöÂÔ.
+    AutoColor  'å­—ä½“æ¢å¤ä¸ºé»˜è®¤é¢œè‰²
+'    Xbs      'æ ‡é¢˜è®¾ä¸ºæ–¹æ­£å°æ ‡å®‹ç®€ä½“,å¦‚æœæ²¡æœ‰è¯¥å­—ä½“, å¿½ç•¥.
 End Function
 
 Function NumPages()
-'Ò³Êı
+'é¡µæ•°
     Dim p&
     p = ActiveDocument.ComputeStatistics(wdStatisticPages)
     With ActiveWindow.ActivePane.View.Zoom
@@ -829,35 +829,35 @@ Function NumPages()
 End Function
 
 Function StyleReset()
-'ÉèÖÃ¹«ÎÄÑùÊ½, ´Ë´¦¿ÉĞŞ¸ÄÄ¬ÈÏ×ÖÌå
+'è®¾ç½®å…¬æ–‡æ ·å¼, æ­¤å¤„å¯ä¿®æ”¹é»˜è®¤å­—ä½“
     With ActiveDocument
-        With .Styles(wdStyleNormal).Font  'ÕıÎÄ
-            .NameFarEast = "ËÎÌå"
+        With .Styles(wdStyleNormal).Font  'æ­£æ–‡
+            .NameFarEast = "æ–¹æ­£ä»¿å®‹_GBK"
             .NameAscii = "Times New Roman"
         End With
 
-        With .Styles(wdStyleHeading1).Font  'Ò»¼¶±êÌâ
-            .NameFarEast = "ËÎÌå"
+        With .Styles(wdStyleHeading1).Font  'ä¸€çº§æ ‡é¢˜
+            .NameFarEast = "æ–¹æ­£é»‘ä½“_GBK"
             .NameAscii = "Times New Roman"
         End With
 
-        With .Styles(wdStyleHeading2).Font   '¶ş¼¶±êÌâ
-            .NameFarEast = "ºÚÌå"
+        With .Styles(wdStyleHeading2).Font   'äºŒçº§æ ‡é¢˜
+            .NameFarEast = "æ–¹æ­£æ¥·ä½“_GBK"
             .NameAscii = "Arial"
         End With
 
-        With .Styles(wdStyleHeading3).Font   'Èı¼¶±êÌâ
-            .NameFarEast = "ËÎÌå"
+        With .Styles(wdStyleHeading3).Font   'ä¸‰çº§æ ‡é¢˜
+            .NameFarEast = "æ–¹æ­£ä»¿å®‹_GBK"
             .NameAscii = "Times New Roman"
         End With
 
-        With .Styles(wdStyleHeading4).Font   'ËÄ¼¶±êÌâ
-            .NameFarEast = "ºÚÌå"
-            .NameAscii = "Arial"
+        With .Styles(wdStyleHeading4).Font   'å››çº§æ ‡é¢˜
+            .NameFarEast = "æ–¹æ­£ä»¿å®‹_GBK"
+            .NameAscii = "Times New Roman"
         End With
 
-        With .Styles(wdStyleHeading5).Font  'Îå¼¶±êÌâ
-            .NameFarEast = "ËÎÌå"
+        With .Styles(wdStyleHeading5).Font  'äº”çº§æ ‡é¢˜
+            .NameFarEast = "æ–¹æ­£ä»¿å®‹_GBK"
             .NameAscii = "Times New Roman"
         End With
     End With
@@ -868,14 +868,14 @@ Function AutoColor()
 End Function
 
 Function Xbs()
-'±êÌâÉèÎª·½ÕıĞ¡±êËÎ¼òÌå, Ä¬ÈÏ²»ÆôÓÃ
+'æ ‡é¢˜è®¾ä¸ºæ–¹æ­£å°æ ‡å®‹ç®€ä½“, é»˜è®¤ä¸å¯ç”¨
     With ActiveDocument
         With .Paragraphs(2).Range
             Do While .Next(4, 1).Font.Size = 22
                 .MoveEnd 4
             Loop
             With .Font
-                .Name = "·½ÕıĞ¡±êËÎ¼òÌå"
+                .Name = "æ–¹æ­£å°æ ‡å®‹ç®€ä½“"
                 .Bold = False
             End With
         End With
